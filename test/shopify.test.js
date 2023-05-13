@@ -317,6 +317,23 @@ describe('Shopify', () => {
       shopify.request(url, 'GET');
     });
 
+    it('emits the `deprecated` event', (done) => {
+      scope.get('/test').reply(
+        200,
+        {},
+        {
+          'x-shopify-api-deprecated-reason': 'Happy April Fools Day!'
+        }
+      );
+
+      shopify.on('deprecated', (data) => {
+        expect(data).to.deep.equal('Happy April Fools Day!');
+        done();
+      });
+
+      shopify.request(url, 'GET');
+    });
+
     it('does not update callLimits if the relevant header is missing', () => {
       scope.get('/test').reply(200, {});
 

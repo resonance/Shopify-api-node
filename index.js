@@ -166,6 +166,17 @@ Shopify.prototype.request = function request(uri, method, key, data, headers) {
         }
       }
 
+      if (
+        'X-Shopify-API-Deprecated-Reason' in res.headers ||
+        'x-shopify-api-deprecated-reason' in res.headers
+      ) {
+        this.emit(
+          'deprecated',
+          res.headers['X-Shopify-API-Deprecated-Reason'] ||
+            res.headers['x-shopify-api-deprecated-reason']
+        );
+      }
+
       return data;
     },
     (err) => {
