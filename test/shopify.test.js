@@ -327,7 +327,9 @@ describe('Shopify', () => {
       );
 
       shopify.on('deprecated', (data) => {
-        expect(data).to.deep.equal('Happy April Fools Day!');
+        expect(data.headers['x-shopify-api-deprecated-reason']).to.deep.equal(
+          'Happy April Fools Day!'
+        );
         done();
       });
 

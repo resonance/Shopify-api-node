@@ -413,7 +413,7 @@ declare class Shopify {
     update: (id: number, params: any) => Promise<Shopify.IMetafield>;
   };
   on: (
-    event: 'callLimits' | 'callGraphqlLimits',
+    event: 'callLimits' | 'callGraphqlLimits' | 'deprecated',
     callback: onCallLimitsFn
   ) => Shopify;
   order: {

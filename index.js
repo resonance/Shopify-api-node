@@ -170,11 +170,7 @@ Shopify.prototype.request = function request(uri, method, key, data, headers) {
         'X-Shopify-API-Deprecated-Reason' in res.headers ||
         'x-shopify-api-deprecated-reason' in res.headers
       ) {
-        this.emit(
-          'deprecated',
-          res.headers['X-Shopify-API-Deprecated-Reason'] ||
-            res.headers['x-shopify-api-deprecated-reason']
-        );
+        this.emit('deprecated', res);
       }
 
       return data;
