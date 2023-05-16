@@ -1,6 +1,6 @@
 {
   "name": "shopify-api-node",
-  "version": "github:resonance/Shopify-api-node#3.3.2-fields-1",
+  "version": "git+https://github.com/resonance/Shopify-api-node.git#deprecated-fields",
   "description": "Shopify API bindings for Node.js",
   "main": "index.js",
   "directories": {
