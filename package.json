@@ -1,6 +1,6 @@
 {
   "name": "shopify-api-node",
-  "version": "deprecated-fields",
+  "version": "3.3.2-deprecated-fields",
   "description": "Shopify API bindings for Node.js",
   "main": "index.js",
   "directories": {
